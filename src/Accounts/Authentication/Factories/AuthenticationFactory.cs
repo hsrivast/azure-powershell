@@ -668,7 +668,6 @@ namespace Microsoft.Azure.Commands.Common.Authentication.Factories
             {
                 AccessToken = accessToken.AccessToken,
                 ExpiresOn = accessToken.ExpiresOn,
-                
             };
             return resultToken;
         }

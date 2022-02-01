@@ -40,7 +40,7 @@ input-file:
 # - (this-folder)/relative-path-to-your-swagger 
 
 # For new RP, the version is 0.1.0
-module-version: 1.0.0
+module-version: 2.0.0
 # Normally, title is the service name
 title: DataShare
 subject-prefix: $(service-name)

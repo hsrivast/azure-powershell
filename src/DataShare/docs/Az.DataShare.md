@@ -1,6 +1,6 @@
 ---
 Module Name: Az.DataShare
-Module Guid: 4d23030f-b6f2-4c9b-9e53-8961e10e7f89
+Module Guid: 45c6feae-0fc6-4049-ace9-cb2fadfb72ad
 Download Help Link: https://docs.microsoft.com/powershell/module/az.datashare
 Help Version: 1.0.0.0
 Locale: en-US

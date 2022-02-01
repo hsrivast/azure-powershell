@@ -15,19 +15,24 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzDataShareAccount'))
 }
 
 Describe 'Get-AzDataShareAccount' {
-    It 'List' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'List' {
+        $accounts = Get-AzDataShareAccount -SubscriptionId $env.SubscriptionId
+        $accounts.Count | Should -BeGreaterOrEqual 1
     }
 
-    It 'Get' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'Get' {
+        $account = Get-AzDataShareAccount -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -SubscriptionId $env.SubscriptionId
+        $account.Name | Should -Be $env.accountName
     }
 
-    It 'List1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'List1' {
+        $accounts = Get-AzDataShareAccount -SubscriptionId $env.SubscriptionId -ResourceGroupName $env.resourceGroupName
+        $accounts.Count | Should -BeGreaterOrEqual 1
     }
 
-    It 'GetViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'GetViaIdentity' {
+        $obj = Get-AzDataShareAccount -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -SubscriptionId $env.SubscriptionId
+        $account = Get-AzDataShareAccount -InputObject $obj
+        $account.Name | Should -Be $env.accountName
     }
 }

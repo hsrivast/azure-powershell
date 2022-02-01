@@ -15,15 +15,19 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzDataShareConsumerInvita
 }
 
 Describe 'Get-AzDataShareConsumerInvitation' {
-    It 'List' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'List' {
+        $invitations = Get-AzDataShareConsumerInvitation
+        $invitations.Count | Should -BeGreaterOrEqual 2
     }
 
-    It 'Get' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'Get' {
+        $invitation = Get-AzDataShareConsumerInvitation -InvitationId $env.invitationIdWithEmail -Location $env.location
+        $invitation.Name | Should -Be $env.invitationNameWithEmail
     }
 
-    It 'GetViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'GetViaIdentity' {
+        $obj = Get-AzDataShareConsumerInvitation -InvitationId $env.invitationIdWithDirectory -Location $env.location
+        $invitation = Get-AzDataShareConsumerInvitation -InputObject $obj
+        $invitation.Name | Should -Be $env.invitationNameWithDirectory
     }
 }

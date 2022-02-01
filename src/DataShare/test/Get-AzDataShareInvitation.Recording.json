@@ -1,0 +1,84 @@
+{
+  "Get-AzDataShareInvitation+[NoContext]+List+$GET+https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst/invitations?api-version=2021-08-01+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst/invitations?api-version=2021-08-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "22" ],
+        "x-ms-client-request-id": [ "9835e1a1-3020-4091-8b3c-55b49a21ae0a" ],
+        "CommandName": [ "Get-AzDataShareInvitation" ],
+        "FullCommandName": [ "Get-AzDataShareInvitation_List" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11972" ],
+        "Server": [ "Kestrel" ],
+        "x-ms-request-id": [ "0245a862-130a-41e7-a3ac-14cb92286fdf" ],
+        "x-ms-correlation-request-id": [ "0245a862-130a-41e7-a3ac-14cb92286fdf" ],
+        "x-ms-routing-request-id": [ "WESTUS2:20220201T054036Z:0245a862-130a-41e7-a3ac-14cb92286fdf" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 01 Feb 2022 05:40:35 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "12" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"value\":[]}",
+      "isContentBase64": false
+    }
+  },
+  "Get-AzDataShareInvitation+[NoContext]+Get+$GET+https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst/invitations/ads-pwsh-invitation-emailjn7fst?api-version=2021-08-01+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst/invitations/ads-pwsh-invitation-emailjn7fst?api-version=2021-08-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "23" ],
+        "x-ms-client-request-id": [ "bd9f2bf5-c43d-4eb2-8961-246c6e0ca437" ],
+        "CommandName": [ "Get-AzDataShareInvitation" ],
+        "FullCommandName": [ "Get-AzDataShareInvitation_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 404,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11971" ],
+        "Server": [ "Kestrel" ],
+        "x-ms-request-id": [ "9c244eab-f216-4a8c-9c00-4b3019e31136" ],
+        "x-ms-correlation-request-id": [ "9c244eab-f216-4a8c-9c00-4b3019e31136" ],
+        "x-ms-routing-request-id": [ "WESTUS2:20220201T054036Z:9c244eab-f216-4a8c-9c00-4b3019e31136" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 01 Feb 2022 05:40:35 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "97" ],
+        "Content-Type": [ "application/json" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"error\":{\"code\":\"7001\",\"message\":\"Invitation not found under share\",\"target\":null,\"details\":[]}}",
+      "isContentBase64": false
+    }
+  }
+}

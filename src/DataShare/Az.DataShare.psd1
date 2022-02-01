@@ -1,7 +1,7 @@
 @{
-  GUID = '4d23030f-b6f2-4c9b-9e53-8961e10e7f89'
+  GUID = '45c6feae-0fc6-4049-ace9-cb2fadfb72ad'
   RootModule = './Az.DataShare.psm1'
-  ModuleVersion = '1.0.0'
+  ModuleVersion = '2.0.0'
   CompatiblePSEditions = 'Core', 'Desktop'
   Author = 'Microsoft Corporation'
   CompanyName = 'Microsoft Corporation'

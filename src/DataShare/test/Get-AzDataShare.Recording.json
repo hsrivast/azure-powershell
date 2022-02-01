@@ -1,0 +1,166 @@
+{
+  "Get-AzDataShare+[NoContext]+List+$GET+https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares?api-version=2021-08-01+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares?api-version=2021-08-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "11" ],
+        "x-ms-client-request-id": [ "9e08cc97-37ad-4bc1-a125-0df54c69684c" ],
+        "CommandName": [ "Get-AzDataShare" ],
+        "FullCommandName": [ "Get-AzDataShare_List" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11981" ],
+        "Server": [ "Kestrel" ],
+        "x-ms-request-id": [ "1e334385-b214-4ef0-8d05-64c71777ea15" ],
+        "x-ms-correlation-request-id": [ "1e334385-b214-4ef0-8d05-64c71777ea15" ],
+        "x-ms-routing-request-id": [ "WESTUS2:20220201T054003Z:1e334385-b214-4ef0-8d05-64c71777ea15" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 01 Feb 2022 05:40:03 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "742" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"value\":[{\"properties\":{\"description\":\"Test share\",\"terms\":\"Test terms\",\"shareKind\":\"InPlace\",\"provisioningState\":\"Succeeded\",\"createdAt\":\"2022-02-01T05:39:57.3677531Z\",\"userName\":\"Harsh Srivastava\",\"userEmail\":\"hsrivastava@microsoft.com\"},\"id\":\"/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst\",\"name\":\"ads-pwsh-sharejn7fst\",\"type\":\"Microsoft.DataShare/accounts/shares\",\"systemData\":{\"createdBy\":\"hsrivastava@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2022-02-01T05:39:57.3200322Z\",\"lastModifiedBy\":\"hsrivastava@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2022-02-01T05:39:57.3200322Z\"}}]}",
+      "isContentBase64": false
+    }
+  },
+  "Get-AzDataShare+[NoContext]+Get+$GET+https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst?api-version=2021-08-01+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst?api-version=2021-08-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "12" ],
+        "x-ms-client-request-id": [ "953a8682-6d44-458e-8e16-2e2b49dcb972" ],
+        "CommandName": [ "Get-AzDataShare" ],
+        "FullCommandName": [ "Get-AzDataShare_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11980" ],
+        "Server": [ "Kestrel" ],
+        "x-ms-request-id": [ "e5ace13c-a76e-4e48-beaa-311f4a9b491d" ],
+        "x-ms-correlation-request-id": [ "e5ace13c-a76e-4e48-beaa-311f4a9b491d" ],
+        "x-ms-routing-request-id": [ "WESTUS2:20220201T054004Z:e5ace13c-a76e-4e48-beaa-311f4a9b491d" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 01 Feb 2022 05:40:03 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "730" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"properties\":{\"description\":\"Test share\",\"terms\":\"Test terms\",\"shareKind\":\"InPlace\",\"provisioningState\":\"Succeeded\",\"createdAt\":\"2022-02-01T05:39:57.3677531Z\",\"userName\":\"Harsh Srivastava\",\"userEmail\":\"hsrivastava@microsoft.com\"},\"id\":\"/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst\",\"name\":\"ads-pwsh-sharejn7fst\",\"type\":\"Microsoft.DataShare/accounts/shares\",\"systemData\":{\"createdBy\":\"hsrivastava@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2022-02-01T05:39:57.3200322Z\",\"lastModifiedBy\":\"hsrivastava@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2022-02-01T05:39:57.3200322Z\"}}",
+      "isContentBase64": false
+    }
+  },
+  "Get-AzDataShare+[NoContext]+GetViaIdentity+$GET+https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst?api-version=2021-08-01+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst?api-version=2021-08-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "13" ],
+        "x-ms-client-request-id": [ "77dfe6cf-0c96-4467-81cb-288c15dc46c6" ],
+        "CommandName": [ "Get-AzDataShare" ],
+        "FullCommandName": [ "Get-AzDataShare_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11979" ],
+        "Server": [ "Kestrel" ],
+        "x-ms-request-id": [ "efc9b52d-4bdb-4366-8189-89de099704c2" ],
+        "x-ms-correlation-request-id": [ "efc9b52d-4bdb-4366-8189-89de099704c2" ],
+        "x-ms-routing-request-id": [ "WESTUS2:20220201T054004Z:efc9b52d-4bdb-4366-8189-89de099704c2" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 01 Feb 2022 05:40:04 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "730" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"properties\":{\"description\":\"Test share\",\"terms\":\"Test terms\",\"shareKind\":\"InPlace\",\"provisioningState\":\"Succeeded\",\"createdAt\":\"2022-02-01T05:39:57.3677531Z\",\"userName\":\"Harsh Srivastava\",\"userEmail\":\"hsrivastava@microsoft.com\"},\"id\":\"/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst\",\"name\":\"ads-pwsh-sharejn7fst\",\"type\":\"Microsoft.DataShare/accounts/shares\",\"systemData\":{\"createdBy\":\"hsrivastava@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2022-02-01T05:39:57.3200322Z\",\"lastModifiedBy\":\"hsrivastava@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2022-02-01T05:39:57.3200322Z\"}}",
+      "isContentBase64": false
+    }
+  },
+  "Get-AzDataShare+[NoContext]+GetViaIdentity+$GET+https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst?api-version=2021-08-01+2": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst?api-version=2021-08-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "14" ],
+        "x-ms-client-request-id": [ "58456862-f7cb-4e23-9cc9-e0e48a29a327" ],
+        "CommandName": [ "Get-AzDataShare" ],
+        "FullCommandName": [ "Get-AzDataShare_GetViaIdentity" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11978" ],
+        "Server": [ "Kestrel" ],
+        "x-ms-request-id": [ "c434fb57-786e-4e85-81f5-01e45989cc6d" ],
+        "x-ms-correlation-request-id": [ "c434fb57-786e-4e85-81f5-01e45989cc6d" ],
+        "x-ms-routing-request-id": [ "WESTUS2:20220201T054004Z:c434fb57-786e-4e85-81f5-01e45989cc6d" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 01 Feb 2022 05:40:04 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "730" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"properties\":{\"description\":\"Test share\",\"terms\":\"Test terms\",\"shareKind\":\"InPlace\",\"provisioningState\":\"Succeeded\",\"createdAt\":\"2022-02-01T05:39:57.3677531Z\",\"userName\":\"Harsh Srivastava\",\"userEmail\":\"hsrivastava@microsoft.com\"},\"id\":\"/subscriptions/0f3dcfc3-18f8-4099-b381-8353e19d43a7/resourceGroups/ads-pwsh-rg3sy4xt/providers/Microsoft.DataShare/accounts/ads-pwsh-account3sy4xt/shares/ads-pwsh-sharejn7fst\",\"name\":\"ads-pwsh-sharejn7fst\",\"type\":\"Microsoft.DataShare/accounts/shares\",\"systemData\":{\"createdBy\":\"hsrivastava@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2022-02-01T05:39:57.3200322Z\",\"lastModifiedBy\":\"hsrivastava@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2022-02-01T05:39:57.3200322Z\"}}",
+      "isContentBase64": false
+    }
+  }
+}

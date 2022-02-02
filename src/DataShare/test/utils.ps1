@@ -47,7 +47,7 @@ function setupEnv() {
     write-host "Account created"
 
     # Create share
-    write-host "Creating share..."
+    write-host "Creating shares..."
     $shareName = "ads-pwsh-share" + $rstr2
     $env.Add("shareName", $shareName)
     $shareDescription = "Test share"
@@ -55,19 +55,20 @@ function setupEnv() {
 	$shareTerms = "Test terms"
     $env.Add("shareTerms", $shareTerms)
     New-AzDataShare -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -Name $shareName -Description $shareDescription -Term $shareTerms -ShareKind InPlace
-    write-host "Share created"
+    $shareNameCpy = "ads-pwsh-share-copy-based" + $rstr2
+    $env.Add("shareNameCpy", $shareNameCpy)
+    New-AzDataShare -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -Name $shareNameCpy -Description $shareDescription -Term $shareTerms -ShareKind CopyBased
+    write-host "Shares created"
 
     # Create invitations
     write-host "Creating invitations..."
     $invitationNameWithEmail = "ads-pwsh-invitation-email" + $rstr2
     $env.Add("invitationNameWithEmail", $invitationNameWithEmail)
     $invitation = New-AzDataShareInvitation -SubscriptionId $env.SubscriptionId -ResourceGroupName $env.resourceGroupName -AccountName $env.accountName -ShareName $env.shareName  -Name $invitationNameWithEmail -TargetEmail $env.email
-    write-host $invitation.invitationId
     $env.Add("invitationIdWithEmail", $invitation.invitationId)
     $invitationNameWithDirectory = "ads-pwsh-invitation-directory" + $rstr2
     $env.Add("invitationNameWithDirectory", $invitationNameWithDirectory)
     $invitation = New-AzDataShareInvitation -SubscriptionId $env.SubscriptionId -ResourceGroupName $env.resourceGroupName -AccountName $env.accountName -ShareName $env.shareName -Name $invitationNameWithDirectory -TargetActiveDirectoryId $env.Tenant -TargetObjectId $env.guid1
-    write-host $invitation.invitationId
     $env.Add("invitationIdWithDirectory", $invitation.invitationId)
     write-host "Invitations created"
 
@@ -77,6 +78,18 @@ function setupEnv() {
     $env.Add("shareSubscriptionName", $shareSubscriptionName)
     New-AzDataShareSubscription -SubscriptionId $env.SubscriptionId -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -Name $shareSubscriptionName -InvitationId $env.invitationIdWithEmail -SourceShareLocation $env.location
     write-host "Share subscription created"
+
+    #Create synchronization setting
+    write-host "Creating synchronization setting..."
+    $recurrenceInterval = "hour"
+    $env.Add("recurrenceInterval", $recurrenceInterval)
+    $synchronizationTime = "1/15/2022 12:45:58 PM"
+    $env.Add("synchronizationTime", $synchronizationTime)
+    $synchronizationSettingName = "ads-pwsh-sync-setting" + $rstr2
+    $env.Add("synchronizationSettingName", $synchronizationSettingName)
+    New-AzDataShareSynchronizationSetting -SubscriptionId $env.SubscriptionId -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -ShareName $env.shareNameCpy -Name $synchronizationSettingName
+    #-SynchronizationSettingBody.RecurrenceInterval $recurrenceInterval -SynchronizationSettingBody.SynchronizationTime $synchronizationTime
+    write-host "Synchronization setting created"
 
     # For any resources you created for test, you should add it to $env here.
     $envFile = 'env.json'

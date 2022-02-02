@@ -17,12 +17,12 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzDataShareInvitation'))
 Describe 'Get-AzDataShareInvitation' {
     It 'List' {
         $invitations = Get-AzDataShareInvitation -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -SubscriptionId $env.SubscriptionId -ShareName $env.shareName
-        $invitations.Count | Should -BeGreaterOrEqual 2
+        $invitations.Count | Should -BeGreaterOrEqual 1
     }
 
     It 'Get' {
-        $invitation = Get-AzDataShareInvitation -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -SubscriptionId $env.SubscriptionId -ShareName $env.shareName -Name $env.invitationNameWithEmail
-        $invitation.Name | Should -Be $env.invitationNameWithEmail
+        $invitation = Get-AzDataShareInvitation -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -SubscriptionId $env.SubscriptionId -ShareName $env.shareName -Name $env.invitationNameWithDirectory
+        $invitation.Name | Should -Be $env.invitationNameWithDirectory
     }
 
     It 'GetViaIdentity' {

@@ -6,8 +6,8 @@
       "Content": null,
       "isContentBase64": false,
       "Headers": {
-        "x-ms-unique-id": [ "20" ],
-        "x-ms-client-request-id": [ "542ff87c-d24d-423a-891c-f0a833a0c841" ],
+        "x-ms-unique-id": [ "21" ],
+        "x-ms-client-request-id": [ "a9fcf2bf-0777-4c7c-9dbd-bc0a1a7c6d32" ],
         "CommandName": [ "Get-AzDataShareConsumerInvitation" ],
         "FullCommandName": [ "Get-AzDataShareConsumerInvitation_List" ],
         "ParameterSetName": [ "__AllParameterSets" ],
@@ -24,12 +24,12 @@
         "Pragma": [ "no-cache" ],
         "x-ms-original-request-ids": [ "", "", "", "", "", "", "", "", "", "" ],
         "x-ms-ratelimit-remaining-tenant-reads": [ "11999" ],
-        "x-ms-request-id": [ "b50b10a6-27f8-428f-97f0-c3f333f1d746" ],
-        "x-ms-correlation-request-id": [ "b50b10a6-27f8-428f-97f0-c3f333f1d746" ],
-        "x-ms-routing-request-id": [ "WESTUS2:20220201T054017Z:b50b10a6-27f8-428f-97f0-c3f333f1d746" ],
+        "x-ms-request-id": [ "2aa087bd-ce3d-4d28-a511-8c605eb2f9b5" ],
+        "x-ms-correlation-request-id": [ "2aa087bd-ce3d-4d28-a511-8c605eb2f9b5" ],
+        "x-ms-routing-request-id": [ "WESTUS2:20220202T003724Z:2aa087bd-ce3d-4d28-a511-8c605eb2f9b5" ],
         "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
         "X-Content-Type-Options": [ "nosniff" ],
-        "Date": [ "Tue, 01 Feb 2022 05:40:17 GMT" ]
+        "Date": [ "Wed, 02 Feb 2022 00:37:23 GMT" ]
       },
       "ContentHeaders": {
         "Content-Type": [ "application/json; charset=utf-8" ],
@@ -40,15 +40,15 @@
       "isContentBase64": false
     }
   },
-  "Get-AzDataShareConsumerInvitation+[NoContext]+Get+$GET+https://management.azure.com/providers/Microsoft.DataShare/locations/eastus/consumerInvitations/506c9b45-3a1c-45d4-9b56-2c3dd29043a2?api-version=2021-08-01+1": {
+  "Get-AzDataShareConsumerInvitation+[NoContext]+Get+$GET+https://management.azure.com/providers/Microsoft.DataShare/locations/eastus/consumerInvitations/50327391-6690-4b5b-8c0d-854ef2b5ecc3?api-version=2021-08-01+1": {
     "Request": {
       "Method": "GET",
-      "RequestUri": "https://management.azure.com/providers/Microsoft.DataShare/locations/eastus/consumerInvitations/506c9b45-3a1c-45d4-9b56-2c3dd29043a2?api-version=2021-08-01",
+      "RequestUri": "https://management.azure.com/providers/Microsoft.DataShare/locations/eastus/consumerInvitations/50327391-6690-4b5b-8c0d-854ef2b5ecc3?api-version=2021-08-01",
       "Content": null,
       "isContentBase64": false,
       "Headers": {
-        "x-ms-unique-id": [ "21" ],
-        "x-ms-client-request-id": [ "af67e5c6-7832-4bb1-810a-3c31e63612d6" ],
+        "x-ms-unique-id": [ "22" ],
+        "x-ms-client-request-id": [ "5bdcf89d-a31d-475a-aeab-d0a1001e798f" ],
         "CommandName": [ "Get-AzDataShareConsumerInvitation" ],
         "FullCommandName": [ "Get-AzDataShareConsumerInvitation_Get" ],
         "ParameterSetName": [ "__AllParameterSets" ],
@@ -65,19 +65,60 @@
         "Pragma": [ "no-cache" ],
         "x-ms-ratelimit-remaining-tenant-reads": [ "11998" ],
         "Server": [ "Kestrel" ],
-        "x-ms-request-id": [ "9e2cc2e0-66a4-4c50-9561-e488574fed44" ],
-        "x-ms-correlation-request-id": [ "9e2cc2e0-66a4-4c50-9561-e488574fed44" ],
-        "x-ms-routing-request-id": [ "WESTUS2:20220201T054018Z:9e2cc2e0-66a4-4c50-9561-e488574fed44" ],
+        "x-ms-request-id": [ "c68eaccf-5e24-4cbb-906b-9b7a2783aa77" ],
+        "x-ms-correlation-request-id": [ "c68eaccf-5e24-4cbb-906b-9b7a2783aa77" ],
+        "x-ms-routing-request-id": [ "WESTUS2:20220202T003725Z:c68eaccf-5e24-4cbb-906b-9b7a2783aa77" ],
         "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
         "X-Content-Type-Options": [ "nosniff" ],
-        "Date": [ "Tue, 01 Feb 2022 05:40:18 GMT" ]
+        "Date": [ "Wed, 02 Feb 2022 00:37:24 GMT" ]
       },
       "ContentHeaders": {
         "Content-Length": [ "170" ],
         "Content-Type": [ "application/json" ],
         "Expires": [ "-1" ]
       },
-      "Content": "{\"error\":{\"code\":\"7001\",\"message\":\"Invitation with InvitationId 506c9b45-3a1c-45d4-9b56-2c3dd29043a2 not found for hsrivastava@microsoft.com\",\"target\":null,\"details\":[]}}",
+      "Content": "{\"error\":{\"code\":\"7001\",\"message\":\"Invitation with InvitationId 50327391-6690-4b5b-8c0d-854ef2b5ecc3 not found for hsrivastava@microsoft.com\",\"target\":null,\"details\":[]}}",
+      "isContentBase64": false
+    }
+  },
+  "Get-AzDataShareConsumerInvitation+[NoContext]+GetViaIdentity+$GET+https://management.azure.com/providers/Microsoft.DataShare/locations/eastus/consumerInvitations/e4b41a0d-e7b9-4504-8d62-d6ff79f0a67b?api-version=2021-08-01+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/providers/Microsoft.DataShare/locations/eastus/consumerInvitations/e4b41a0d-e7b9-4504-8d62-d6ff79f0a67b?api-version=2021-08-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "23" ],
+        "x-ms-client-request-id": [ "9b33de1a-7efd-411b-9061-41eb4f1d060b" ],
+        "CommandName": [ "Get-AzDataShareConsumerInvitation" ],
+        "FullCommandName": [ "Get-AzDataShareConsumerInvitation_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 404,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-tenant-reads": [ "11997" ],
+        "Server": [ "Kestrel" ],
+        "x-ms-request-id": [ "b8c00fbc-2f45-4e72-9673-749a1868898f" ],
+        "x-ms-correlation-request-id": [ "b8c00fbc-2f45-4e72-9673-749a1868898f" ],
+        "x-ms-routing-request-id": [ "WESTUS2:20220202T003725Z:b8c00fbc-2f45-4e72-9673-749a1868898f" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Wed, 02 Feb 2022 00:37:25 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "170" ],
+        "Content-Type": [ "application/json" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"error\":{\"code\":\"7001\",\"message\":\"Invitation with InvitationId e4b41a0d-e7b9-4504-8d62-d6ff79f0a67b not found for hsrivastava@microsoft.com\",\"target\":null,\"details\":[]}}",
       "isContentBase64": false
     }
   }

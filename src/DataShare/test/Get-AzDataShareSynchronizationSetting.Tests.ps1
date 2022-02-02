@@ -15,15 +15,19 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzDataShareSynchronizatio
 }
 
 Describe 'Get-AzDataShareSynchronizationSetting' {
-    It 'List' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'List' {
+        $syncSettings = Get-AzDataShareSynchronizationSetting -SubscriptionId $env.SubscriptionId -ResourceGroupName $env.resourceGroupName -AccountName $env.accountName -ShareName $env.shareName
+        $syncSettings.Count | Should -BeGreaterOrEqual 1
     }
 
-    It 'Get' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'Get' {
+        $syncSetting = Get-AzDataShareSynchronizationSetting -SubscriptionId $env.SubscriptionId -ResourceGroupName $env.resourceGroupName -AccountName $env.accountName -ShareName $env.shareName -Name $env.synchronizationSettingName
+        $syncSetting.Name | Should -Be $env.synchronizationSettingName
     }
 
-    It 'GetViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'GetViaIdentity' {
+        $obj = Get-AzDataShareSynchronizationSetting -SubscriptionId $env.SubscriptionId -ResourceGroupName $env.resourceGroupName -AccountName $env.accountName -ShareName $env.shareName -Name $env.synchronizationSettingName
+        $syncSetting = Get-AzDataShareSynchronizationSetting -InputObject $obj
+        $syncSetting.Name | Should -Be $env.synchronizationSettingName
     }
 }

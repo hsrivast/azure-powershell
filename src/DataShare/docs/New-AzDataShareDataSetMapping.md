@@ -14,7 +14,7 @@ Create a DataSetMapping
 
 ```
 New-AzDataShareDataSetMapping -AccountName <String> -Name <String> -ResourceGroupName <String>
- -ShareSubscriptionName <String> -Kind <DataSetMappingKind> [-SubscriptionId <String>]
+ -ShareSubscriptionName <String> -DataSetMapping <IDataSetMapping> [-SubscriptionId <String>]
  [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -58,6 +58,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DataSetMapping
+A data set mapping data transfer object.
+To construct, see NOTES section for DATASETMAPPING properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IDataSetMapping
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -67,21 +83,6 @@ Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Kind
-Kind of data set mapping.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Support.DataSetMappingKind
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -184,6 +185,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IDataSetMapping
+
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IDataSetMapping
@@ -191,6 +194,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+DATASETMAPPING <IDataSetMapping>: A data set mapping data transfer object.
+  - `Kind <DataSetMappingKind>`: Kind of data set mapping.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The type of identity that last modified the resource.
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <LastModifiedByType?>]`: The type of identity that last modified the resource.
 
 ## RELATED LINKS
 

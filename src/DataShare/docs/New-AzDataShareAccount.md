@@ -12,10 +12,30 @@ Create an account
 
 ## SYNTAX
 
+### CreateExpanded (Default)
 ```
 New-AzDataShareAccount -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
  [-IdentityType <Type>] [-Location <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
  [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Create
+```
+New-AzDataShareAccount -Name <String> -ResourceGroupName <String> -Account <IAccount>
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-AzDataShareAccount -InputObject <IDataShareIdentity> -Account <IAccount> [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-AzDataShareAccount -InputObject <IDataShareIdentity> [-IdentityType <Type>] [-Location <String>]
+ [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,6 +62,22 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -Account
+An account data transfer object.
+To construct, see NOTES section for ACCOUNT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IAccount
+Parameter Sets: Create, CreateViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -AsJob
 Run the command as a job
@@ -78,7 +114,7 @@ Identity Type
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Support.Type
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -88,12 +124,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.IDataShareIdentity
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Location
 Location of the azure resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -108,7 +160,7 @@ The name of the share account.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases: AccountName
 
 Required: True
@@ -138,7 +190,7 @@ The resource group name.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -153,7 +205,7 @@ The subscription identifier
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: False
@@ -168,7 +220,7 @@ Tags on the azure resource.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -214,6 +266,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IAccount
+
+### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.IDataShareIdentity
+
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IAccount
@@ -221,6 +277,39 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+ACCOUNT <IAccount>: An account data transfer object.
+  - `[Location <String>]`: Location of the azure resource.
+  - `[Tag <IDefaultDtoTags>]`: Tags on the azure resource.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The type of identity that last modified the resource.
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <LastModifiedByType?>]`: The type of identity that last modified the resource.
+  - `[IdentityType <Type?>]`: Identity Type
+
+INPUTOBJECT <IDataShareIdentity>: Identity Parameter
+  - `[AccountName <String>]`: The name of the share account.
+  - `[DataSetMappingName <String>]`: The name of the dataSetMapping.
+  - `[DataSetName <String>]`: The name of the dataSet.
+  - `[Id <String>]`: Resource identity path
+  - `[InvitationId <String>]`: An invitation id
+  - `[InvitationName <String>]`: The name of the invitation.
+  - `[Location <String>]`: Location of the invitation
+  - `[ProviderShareSubscriptionId <String>]`: To locate shareSubscription
+  - `[ResourceGroupName <String>]`: The resource group name.
+  - `[ShareName <String>]`: The name of the share.
+  - `[ShareSubscriptionName <String>]`: The name of the shareSubscription.
+  - `[SubscriptionId <String>]`: The subscription identifier
+  - `[SynchronizationSettingName <String>]`: The name of the synchronizationSetting.
+  - `[TriggerName <String>]`: The name of the trigger.
 
 ## RELATED LINKS
 

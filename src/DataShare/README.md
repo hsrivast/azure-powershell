@@ -54,8 +54,48 @@ directive:
   # 1. Remove the unexpanded parameter set
   # 2. For New-* cmdlets, ViaIdentity is not required, so CreateViaIdentityExpanded is removed as well
   - where:
+      subject: ^(?!SynchronizationSetting)$|^(?!DataSet)$|^(?!DataSetMapping)$|^(?!Trigger)$
       variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^Update$|^UpdateViaIdentity$
     remove: true
+
+  # only keep the unexpanded parameter set 'Create' for New-AzDataShareSynchronizationSetting
+  - where:
+      subject: SynchronizationSetting|DataSet|DataSetMapping|Trigger
+      variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^Update$|^UpdateViaIdentity$
+    remove: true
+
+  # Generate a model cmdlet for model ScheduledSynchronizationSetting
+  - model-cmdlet:
+    - ADLSGen1FileDataSet
+    - ADLSGen1FolderDataSet
+    - ADLSGen2FileDataSet
+    - ADLSGen2FileDataSetMapping
+    - ADLSGen2FileSystemDataSet
+    - ADLSGen2FileSystemDataSetMapping
+    - ADLSGen2FolderDataSet
+    - ADLSGen2FolderDataSetMapping
+    - BlobContainerDataSet
+    - BlobContainerDataSetMapping
+    - BlobDataSet
+    - BlobDataSetMapping
+    - BlobFolderDataSet
+    - BlobFolderDataSetMapping
+    - KustoClusterDataSet
+    - KustoClusterDataSetMapping
+    - KustoDatabaseDataSet
+    - KustoDatabaseDataSetMapping
+    - KustoTableDataSet
+    - KustoTableDataSetMapping
+    - ScheduledSourceSynchronizationSetting
+    - ScheduledSynchronizationSetting
+    - ScheduledTrigger
+    - SqlDBTableDataSet
+    - SqlDBTableDataSetMapping
+    - SqlDWTableDataSet
+    - SqlDWTableDataSetMapping
+    - SynapseWorkspaceSqlPoolTableDataSet
+    - SynapseWorkspaceSqlPoolTableDataSetMapping
+
   # Remove the set-* cmdlet
   - where:
       verb: Set

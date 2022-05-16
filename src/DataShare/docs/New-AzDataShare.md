@@ -12,10 +12,29 @@ Create a share
 
 ## SYNTAX
 
+### CreateExpanded (Default)
 ```
 New-AzDataShare -AccountName <String> -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
  [-Description <String>] [-ShareKind <ShareKind>] [-Term <String>] [-DefaultProfile <PSObject>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
+```
+
+### Create
+```
+New-AzDataShare -AccountName <String> -Name <String> -ResourceGroupName <String> -Share <IShare>
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-AzDataShare -InputObject <IDataShareIdentity> -Share <IShare> [-DefaultProfile <PSObject>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-AzDataShare -InputObject <IDataShareIdentity> [-Description <String>] [-ShareKind <ShareKind>]
+ [-Term <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,7 +67,7 @@ The name of the share account.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -78,7 +97,7 @@ Share description.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -88,12 +107,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.IDataShareIdentity
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Name
 The name of the share.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases: ShareName
 
 Required: True
@@ -108,7 +143,7 @@ The resource group name.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -118,12 +153,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Share
+A share data transfer object.
+To construct, see NOTES section for SHARE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IShare
+Parameter Sets: Create, CreateViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -ShareKind
 Share kind.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Support.ShareKind
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -138,7 +189,7 @@ The subscription identifier
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: False
@@ -153,7 +204,7 @@ Share terms.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -199,6 +250,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IShare
+
+### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.IDataShareIdentity
+
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IShare
@@ -206,6 +261,38 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IDataShareIdentity>: Identity Parameter
+  - `[AccountName <String>]`: The name of the share account.
+  - `[DataSetMappingName <String>]`: The name of the dataSetMapping.
+  - `[DataSetName <String>]`: The name of the dataSet.
+  - `[Id <String>]`: Resource identity path
+  - `[InvitationId <String>]`: An invitation id
+  - `[InvitationName <String>]`: The name of the invitation.
+  - `[Location <String>]`: Location of the invitation
+  - `[ProviderShareSubscriptionId <String>]`: To locate shareSubscription
+  - `[ResourceGroupName <String>]`: The resource group name.
+  - `[ShareName <String>]`: The name of the share.
+  - `[ShareSubscriptionName <String>]`: The name of the shareSubscription.
+  - `[SubscriptionId <String>]`: The subscription identifier
+  - `[SynchronizationSettingName <String>]`: The name of the synchronizationSetting.
+  - `[TriggerName <String>]`: The name of the trigger.
+
+SHARE <IShare>: A share data transfer object.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The type of identity that last modified the resource.
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <LastModifiedByType?>]`: The type of identity that last modified the resource.
+  - `[Description <String>]`: Share description.
+  - `[Kind <ShareKind?>]`: Share kind.
+  - `[Term <String>]`: Share terms.
 
 ## RELATED LINKS
 

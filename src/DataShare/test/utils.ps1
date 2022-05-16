@@ -29,7 +29,10 @@ function setupEnv() {
     $env.Add("guid1", $guid1)
     $guid2 = "04b69dad-541c-4983-9b2b-4aa290c81e53"
     $env.Add("guid2", $guid2)
-    
+
+    $env.Add("consumerResourceGroup", "ads_azure_cli_rg")
+    $env.Add("consumerStorageAccount", "azurecliadsconsumersa")
+    $env.Add("consumerAccount", "cli_test_consumer_account")
 
     # Create test resource group
     write-host "Creating test resource group..."
@@ -60,6 +63,30 @@ function setupEnv() {
     New-AzDataShare -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -Name $shareNameCpy -Description $shareDescription -Term $shareTerms -ShareKind CopyBased
     write-host "Shares created"
 
+    #Create DataSet
+    write-host "Creating dataset..."
+    #$dataSetName = "adsdataset" + $rstr2
+    #$env.Add("dataSetName", $dataSetName)
+    #$containerName = "adscontainer" + $rstr2
+    #$env.Add("containerName", $containerName)
+    #$storageAccountName = "adsstorage" + $rstr2
+    #$env.Add("storageAccountName", $storageAccountName)
+    #$dataSetObj = New-AzDataShareBlobContainerDataSetObject -ContainerName $env.containerName -ResourceGroup $env.resourceGroupName -StorageAccountName $env.accountName -SubscriptionId $env.SubscriptionId -Kind "Container"
+    #New-AzDataShareDataSet -ResourceGroupName $env.resourceGroupName -AccountName $env.accountName -ShareName $env.shareNameCpy -Name $env.dataSetName -DataSet $dataSetObj
+    write-host "DataSet created"
+
+    #Create synchronization setting
+    write-host "Creating synchronization setting..."
+    $recurrenceInterval = "hour"
+    $env.Add("recurrenceInterval", $recurrenceInterval)
+    $synchronizationTime = "1/15/2022 12:45:58 PM"
+    $env.Add("synchronizationTime", $synchronizationTime)
+    $synchronizationSettingName = "ads-pwsh-sync-setting" + $rstr2
+    $env.Add("synchronizationSettingName", $synchronizationSettingName)
+    $settings = New-AzDataShareScheduledSynchronizationSettingObject -RecurrenceInterval $recurrenceInterval -SynchronizationTime $synchronizationTime
+    New-AzDataShareSynchronizationSetting -SubscriptionId $env.SubscriptionId -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -ShareName $env.shareNameCpy -Name $synchronizationSettingName -SynchronizationSetting $settings
+    write-host "Synchronization setting created"
+
     # Create invitations
     write-host "Creating invitations..."
     $invitationNameWithEmail = "ads-pwsh-invitation-email" + $rstr2
@@ -79,17 +106,17 @@ function setupEnv() {
     New-AzDataShareSubscription -SubscriptionId $env.SubscriptionId -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -Name $shareSubscriptionName -InvitationId $env.invitationIdWithEmail -SourceShareLocation $env.location
     write-host "Share subscription created"
 
-    #Create synchronization setting
-    write-host "Creating synchronization setting..."
-    $recurrenceInterval = "hour"
-    $env.Add("recurrenceInterval", $recurrenceInterval)
-    $synchronizationTime = "1/15/2022 12:45:58 PM"
-    $env.Add("synchronizationTime", $synchronizationTime)
-    $synchronizationSettingName = "ads-pwsh-sync-setting" + $rstr2
-    $env.Add("synchronizationSettingName", $synchronizationSettingName)
-    New-AzDataShareSynchronizationSetting -SubscriptionId $env.SubscriptionId -AccountName $env.accountName -ResourceGroupName $env.resourceGroupName -ShareName $env.shareNameCpy -Name $synchronizationSettingName
-    #-SynchronizationSettingBody.RecurrenceInterval $recurrenceInterval -SynchronizationSettingBody.SynchronizationTime $synchronizationTime
-    write-host "Synchronization setting created"
+    #Create DataSet Mapping
+    write-host "Creating dataset mapping..."
+    write-host "Dataset mapping created"
+
+    #Create share subscription synchronization
+    write-host "Creating share Subscription synchronization..."
+    write-host "Share Subscription synchronization created"
+    
+    #Create Trigger
+    write-host "Creating trigger..."
+    write-host "Trigger created"
 
     # For any resources you created for test, you should add it to $env here.
     $envFile = 'env.json'

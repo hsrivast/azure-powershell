@@ -14,8 +14,8 @@ Create a synchronizationSetting
 
 ```
 New-AzDataShareSynchronizationSetting -AccountName <String> -Name <String> -ResourceGroupName <String>
- -ShareName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -ShareName <String> -SynchronizationSetting <ISynchronizationSetting> [-SubscriptionId <String>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -133,6 +133,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SynchronizationSetting
+A Synchronization Setting data transfer object.
+To construct, see NOTES section for SYNCHRONIZATIONSETTING properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.ISynchronizationSetting
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -169,6 +185,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.ISynchronizationSetting
+
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.ISynchronizationSetting
@@ -176,6 +194,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+SYNCHRONIZATIONSETTING <ISynchronizationSetting>: A Synchronization Setting data transfer object.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The type of identity that last modified the resource.
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <LastModifiedByType?>]`: The type of identity that last modified the resource.
 
 ## RELATED LINKS
 

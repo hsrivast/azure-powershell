@@ -12,11 +12,32 @@ Create an invitation
 
 ## SYNTAX
 
+### CreateExpanded (Default)
 ```
 New-AzDataShareInvitation -AccountName <String> -Name <String> -ResourceGroupName <String> -ShareName <String>
  [-SubscriptionId <String>] [-ExpirationDate <DateTime>] [-TargetActiveDirectoryId <String>]
  [-TargetEmail <String>] [-TargetObjectId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
+```
+
+### Create
+```
+New-AzDataShareInvitation -AccountName <String> -Name <String> -ResourceGroupName <String> -ShareName <String>
+ -Invitation <IInvitation> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-AzDataShareInvitation -InputObject <IDataShareIdentity> -Invitation <IInvitation>
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-AzDataShareInvitation -InputObject <IDataShareIdentity> [-ExpirationDate <DateTime>]
+ [-TargetActiveDirectoryId <String>] [-TargetEmail <String>] [-TargetObjectId <String>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +70,7 @@ The name of the share account.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -79,7 +100,7 @@ The expiration date for the invitation and share subscription.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -89,12 +110,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.IDataShareIdentity
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Invitation
+A Invitation data transfer object.
+To construct, see NOTES section for INVITATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IInvitation
+Parameter Sets: Create, CreateViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Name
 The name of the invitation.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases: InvitationName
 
 Required: True
@@ -109,7 +162,7 @@ The resource group name.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -124,7 +177,7 @@ The name of the share to send the invitation for.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -139,7 +192,7 @@ The subscription identifier
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: False
@@ -155,7 +208,7 @@ Can't be combined with email.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -170,7 +223,7 @@ The email the invitation is directed to.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -186,7 +239,7 @@ This enables sendinginvitations to specific users or applications in an AD tenan
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -232,6 +285,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IInvitation
+
+### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.IDataShareIdentity
+
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IInvitation
@@ -239,6 +296,39 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IDataShareIdentity>: Identity Parameter
+  - `[AccountName <String>]`: The name of the share account.
+  - `[DataSetMappingName <String>]`: The name of the dataSetMapping.
+  - `[DataSetName <String>]`: The name of the dataSet.
+  - `[Id <String>]`: Resource identity path
+  - `[InvitationId <String>]`: An invitation id
+  - `[InvitationName <String>]`: The name of the invitation.
+  - `[Location <String>]`: Location of the invitation
+  - `[ProviderShareSubscriptionId <String>]`: To locate shareSubscription
+  - `[ResourceGroupName <String>]`: The resource group name.
+  - `[ShareName <String>]`: The name of the share.
+  - `[ShareSubscriptionName <String>]`: The name of the shareSubscription.
+  - `[SubscriptionId <String>]`: The subscription identifier
+  - `[SynchronizationSettingName <String>]`: The name of the synchronizationSetting.
+  - `[TriggerName <String>]`: The name of the trigger.
+
+INVITATION <IInvitation>: A Invitation data transfer object.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The type of identity that last modified the resource.
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <LastModifiedByType?>]`: The type of identity that last modified the resource.
+  - `[ExpirationDate <DateTime?>]`: The expiration date for the invitation and share subscription.
+  - `[TargetActiveDirectoryId <String>]`: The target Azure AD Id. Can't be combined with email.
+  - `[TargetEmail <String>]`: The email the invitation is directed to.
+  - `[TargetObjectId <String>]`: The target user or application Id that invitation is being sent to.         Must be specified along TargetActiveDirectoryId. This enables sending         invitations to specific users or applications in an AD tenant.
 
 ## RELATED LINKS
 

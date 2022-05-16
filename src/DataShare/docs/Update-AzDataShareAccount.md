@@ -18,6 +18,19 @@ Update-AzDataShareAccount -Name <String> -ResourceGroupName <String> [-Subscript
  [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### Update
+```
+Update-AzDataShareAccount -Name <String> -ResourceGroupName <String>
+ -AccountUpdateParameter <IAccountUpdateParameters> [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-AzDataShareAccount -InputObject <IDataShareIdentity> -AccountUpdateParameter <IAccountUpdateParameters>
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ### UpdateViaIdentityExpanded
 ```
 Update-AzDataShareAccount -InputObject <IDataShareIdentity> [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
@@ -49,6 +62,22 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AccountUpdateParameter
+Update parameters for accounts
+To construct, see NOTES section for ACCOUNTUPDATEPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IAccountUpdateParameters
+Parameter Sets: Update, UpdateViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -70,7 +99,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.IDataShareIdentity
-Parameter Sets: UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -85,7 +114,7 @@ The name of the share account.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: Update, UpdateExpanded
 Aliases: AccountName
 
 Required: True
@@ -100,7 +129,7 @@ The resource group name.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -115,7 +144,7 @@ The subscription identifier
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: False
@@ -130,7 +159,7 @@ Tags on the azure resource.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -176,6 +205,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.Api20210801.IAccountUpdateParameters
+
 ### Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.IDataShareIdentity
 
 ## OUTPUTS
@@ -190,6 +221,10 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+ACCOUNTUPDATEPARAMETER <IAccountUpdateParameters>: Update parameters for accounts
+  - `[Tag <IAccountUpdateParametersTags>]`: Tags on the azure resource.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 INPUTOBJECT <IDataShareIdentity>: Identity Parameter
   - `[AccountName <String>]`: The name of the share account.

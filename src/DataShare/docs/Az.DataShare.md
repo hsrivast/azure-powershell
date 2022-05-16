@@ -77,6 +77,48 @@ Create a share
 ### [New-AzDataShareAccount](New-AzDataShareAccount.md)
 Create an account
 
+### [New-AzDataShareADLSGen1FileDataSetObject](New-AzDataShareADLSGen1FileDataSetObject.md)
+Create an in-memory object for ADLSGen1FileDataSet.
+
+### [New-AzDataShareADLSGen1FolderDataSetObject](New-AzDataShareADLSGen1FolderDataSetObject.md)
+Create an in-memory object for ADLSGen1FolderDataSet.
+
+### [New-AzDataShareADLSGen2FileDataSetMappingObject](New-AzDataShareADLSGen2FileDataSetMappingObject.md)
+Create an in-memory object for ADLSGen2FileDataSetMapping.
+
+### [New-AzDataShareADLSGen2FileDataSetObject](New-AzDataShareADLSGen2FileDataSetObject.md)
+Create an in-memory object for ADLSGen2FileDataSet.
+
+### [New-AzDataShareADLSGen2FileSystemDataSetMappingObject](New-AzDataShareADLSGen2FileSystemDataSetMappingObject.md)
+Create an in-memory object for ADLSGen2FileSystemDataSetMapping.
+
+### [New-AzDataShareADLSGen2FileSystemDataSetObject](New-AzDataShareADLSGen2FileSystemDataSetObject.md)
+Create an in-memory object for ADLSGen2FileSystemDataSet.
+
+### [New-AzDataShareADLSGen2FolderDataSetMappingObject](New-AzDataShareADLSGen2FolderDataSetMappingObject.md)
+Create an in-memory object for ADLSGen2FolderDataSetMapping.
+
+### [New-AzDataShareADLSGen2FolderDataSetObject](New-AzDataShareADLSGen2FolderDataSetObject.md)
+Create an in-memory object for ADLSGen2FolderDataSet.
+
+### [New-AzDataShareBlobContainerDataSetMappingObject](New-AzDataShareBlobContainerDataSetMappingObject.md)
+Create an in-memory object for BlobContainerDataSetMapping.
+
+### [New-AzDataShareBlobContainerDataSetObject](New-AzDataShareBlobContainerDataSetObject.md)
+Create an in-memory object for BlobContainerDataSet.
+
+### [New-AzDataShareBlobDataSetMappingObject](New-AzDataShareBlobDataSetMappingObject.md)
+Create an in-memory object for BlobDataSetMapping.
+
+### [New-AzDataShareBlobDataSetObject](New-AzDataShareBlobDataSetObject.md)
+Create an in-memory object for BlobDataSet.
+
+### [New-AzDataShareBlobFolderDataSetMappingObject](New-AzDataShareBlobFolderDataSetMappingObject.md)
+Create an in-memory object for BlobFolderDataSetMapping.
+
+### [New-AzDataShareBlobFolderDataSetObject](New-AzDataShareBlobFolderDataSetObject.md)
+Create an in-memory object for BlobFolderDataSet.
+
 ### [New-AzDataShareDataSet](New-AzDataShareDataSet.md)
 Create a DataSet
 
@@ -86,8 +128,53 @@ Create a DataSetMapping
 ### [New-AzDataShareInvitation](New-AzDataShareInvitation.md)
 Create an invitation
 
+### [New-AzDataShareKustoClusterDataSetMappingObject](New-AzDataShareKustoClusterDataSetMappingObject.md)
+Create an in-memory object for KustoClusterDataSetMapping.
+
+### [New-AzDataShareKustoClusterDataSetObject](New-AzDataShareKustoClusterDataSetObject.md)
+Create an in-memory object for KustoClusterDataSet.
+
+### [New-AzDataShareKustoDatabaseDataSetMappingObject](New-AzDataShareKustoDatabaseDataSetMappingObject.md)
+Create an in-memory object for KustoDatabaseDataSetMapping.
+
+### [New-AzDataShareKustoDatabaseDataSetObject](New-AzDataShareKustoDatabaseDataSetObject.md)
+Create an in-memory object for KustoDatabaseDataSet.
+
+### [New-AzDataShareKustoTableDataSetMappingObject](New-AzDataShareKustoTableDataSetMappingObject.md)
+Create an in-memory object for KustoTableDataSetMapping.
+
+### [New-AzDataShareKustoTableDataSetObject](New-AzDataShareKustoTableDataSetObject.md)
+Create an in-memory object for KustoTableDataSet.
+
+### [New-AzDataShareScheduledSourceSynchronizationSettingObject](New-AzDataShareScheduledSourceSynchronizationSettingObject.md)
+Create an in-memory object for ScheduledSourceSynchronizationSetting.
+
+### [New-AzDataShareScheduledSynchronizationSettingObject](New-AzDataShareScheduledSynchronizationSettingObject.md)
+Create an in-memory object for ScheduledSynchronizationSetting.
+
+### [New-AzDataShareScheduledTriggerObject](New-AzDataShareScheduledTriggerObject.md)
+Create an in-memory object for ScheduledTrigger.
+
+### [New-AzDataShareSqlDBTableDataSetMappingObject](New-AzDataShareSqlDBTableDataSetMappingObject.md)
+Create an in-memory object for SqlDBTableDataSetMapping.
+
+### [New-AzDataShareSqlDBTableDataSetObject](New-AzDataShareSqlDBTableDataSetObject.md)
+Create an in-memory object for SqlDBTableDataSet.
+
+### [New-AzDataShareSqlDWTableDataSetMappingObject](New-AzDataShareSqlDWTableDataSetMappingObject.md)
+Create an in-memory object for SqlDWTableDataSetMapping.
+
+### [New-AzDataShareSqlDWTableDataSetObject](New-AzDataShareSqlDWTableDataSetObject.md)
+Create an in-memory object for SqlDWTableDataSet.
+
 ### [New-AzDataShareSubscription](New-AzDataShareSubscription.md)
 Create a shareSubscription in an account
+
+### [New-AzDataShareSynapseWorkspaceSqlPoolTableDataSetMappingObject](New-AzDataShareSynapseWorkspaceSqlPoolTableDataSetMappingObject.md)
+Create an in-memory object for SynapseWorkspaceSqlPoolTableDataSetMapping.
+
+### [New-AzDataShareSynapseWorkspaceSqlPoolTableDataSetObject](New-AzDataShareSynapseWorkspaceSqlPoolTableDataSetObject.md)
+Create an in-memory object for SynapseWorkspaceSqlPoolTableDataSet.
 
 ### [New-AzDataShareSynchronizationSetting](New-AzDataShareSynchronizationSetting.md)
 Create a synchronizationSetting
